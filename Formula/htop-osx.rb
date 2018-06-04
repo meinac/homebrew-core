@@ -24,7 +24,7 @@ class HtopOsx < Formula
     system "make", "install", "DEFAULT_INCLUDES='-iquote .'"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     htop-osx requires root privileges to correctly display all running processes,
     so you will need to run `sudo htop`.
     You should be certain that you trust any software you grant root privileges.

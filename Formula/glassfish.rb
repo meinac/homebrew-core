@@ -11,7 +11,7 @@ class Glassfish < Formula
     libexec.install Dir["*", ".org.opensolaris,pkg"]
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     The home of GlassFish Application Server 4 is:
       #{opt_libexec}
 

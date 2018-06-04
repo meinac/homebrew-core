@@ -28,7 +28,7 @@ class Libagar < Formula
   end
 
   test do
-    (testpath/"test.c").write <<-EOS.undent
+    (testpath/"test.c").write <<-EOS
       #include <agar/core.h>
       #include <agar/gui.h>
 

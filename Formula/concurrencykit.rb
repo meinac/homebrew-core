@@ -21,7 +21,7 @@ class Concurrencykit < Formula
   end
 
   test do
-    (testpath/"test.c").write <<-EOS.undent
+    (testpath/"test.c").write <<-EOS
       #include <ck_spinlock.h>
       int main()
       {

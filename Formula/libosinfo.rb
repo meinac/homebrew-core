@@ -46,7 +46,7 @@ class Libosinfo < Formula
   end
 
   test do
-    (testpath/"test.py").write <<-EOS.undent
+    (testpath/"test.py").write <<-EOS
       import gi
       gi.require_version('Libosinfo', '1.0')
       from gi.repository import Libosinfo as osinfo;

@@ -31,7 +31,7 @@ class Rock < Formula
   end
 
   test do
-    (testpath/"hello.ooc").write <<-EOS.undent
+    (testpath/"hello.ooc").write <<-EOS
       import os/Time
       Time dateTime() println()
     EOS

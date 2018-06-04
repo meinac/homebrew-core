@@ -94,7 +94,7 @@ class GdkPixbuf < Formula
 
   def caveats
     if build.with?("relocations") || HOMEBREW_PREFIX.to_s != "/usr/local"
-      <<-EOS.undent
+      <<-EOS
         Programs that require this module need to set the environment variable
           export GDK_PIXBUF_MODULE_FILE="#{module_file}"
           export GDK_PIXBUF_MODULEDIR="#{module_dir}/loaders"

@@ -53,7 +53,7 @@ class Fstar < Formula
     prefix.install_symlink libexec/"src"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     F* code can be extracted to OCaml code.
     To compile the generated OCaml code, you must install the
     package 'batteries' from the Opam package manager:

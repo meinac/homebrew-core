@@ -30,7 +30,7 @@ class Dlite < Formula
   end
 
   def caveats
-    <<-EOS.undent
+    <<-EOS
       Installing and upgrading dlite with brew does not automatically
       install or upgrade the dlite daemon and virtual machine.
     EOS

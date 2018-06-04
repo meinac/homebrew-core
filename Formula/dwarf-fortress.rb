@@ -23,7 +23,7 @@ class DwarfFortress < Formula
                                 "#{MacOS::XQuartz.prefix}/lib/libfreetype.6.dylib",
                                 "libs/SDL_ttf.framework/SDL_ttf"
 
-    (bin/"dwarffortress").write <<-EOS.undent
+    (bin/"dwarffortress").write <<-EOS
       #!/bin/sh
       exec #{libexec}/df
     EOS

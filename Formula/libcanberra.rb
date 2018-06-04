@@ -45,7 +45,7 @@ class Libcanberra < Formula
   end
 
   test do
-    (testpath/"lc.c").write <<-EOS.undent
+    (testpath/"lc.c").write <<-EOS
       #include <canberra.h>
       int main()
       {

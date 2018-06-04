@@ -1,7 +1,7 @@
 class UniversalBrewedPython < Requirement
   satisfy { archs_for_command("python").universal? }
 
-  def message; <<-EOS.undent
+  def message; <<-EOS
     A build of GDB using a brewed Python was requested, but Python is not
     a universal build.
 
@@ -77,7 +77,7 @@ class Gdb < Formula
     system "make", "install"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     gdb requires special privileges to access Mach ports.
     You will need to codesign the binary. For instructions, see:
 

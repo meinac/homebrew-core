@@ -27,7 +27,7 @@ class Logstash < Formula
     bin.install_symlink libexec/"bin/logstash-plugin"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     Please read the getting started guide located at:
       https://www.elastic.co/guide/en/logstash/current/getting-started-with-logstash.html
     EOS
@@ -37,7 +37,7 @@ class Logstash < Formula
     # workaround https://github.com/elastic/logstash/issues/6378
     mkdir testpath/"config"
     ["jvm.options", "log4j2.properties", "startup.options"].each { |f| cp prefix/"libexec/config/#{f}", testpath/"config" }
-    (testpath/"config/logstash.yml").write <<-EOS.undent
+    (testpath/"config/logstash.yml").write <<-EOS
       path.queue: #{testpath}/queue
     EOS
     mkdir testpath/"data"

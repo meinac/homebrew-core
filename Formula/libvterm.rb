@@ -19,7 +19,7 @@ class Libvterm < Formula
   end
 
   test do
-    (testpath/"test.c").write <<-EOS.undent
+    (testpath/"test.c").write <<-EOS
       #include <vterm.h>
 
       int main() {

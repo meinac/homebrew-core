@@ -23,7 +23,7 @@ class Libprotoident < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<-EOS.undent
+    (testpath/"test.cpp").write <<-EOS
       #include <libprotoident.h>
 
       int main() {

@@ -6,7 +6,7 @@ class Languagetool < Formula
 
   bottle :unneeded
 
-  def server_script(server_jar); <<-EOS.undent
+  def server_script(server_jar); <<-EOS
     #!/bin/bash
     exec java -cp #{server_jar} org.languagetool.server.HTTPServer "$@"
     EOS

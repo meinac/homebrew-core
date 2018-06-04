@@ -22,7 +22,7 @@ class Systemc < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<-EOS.undent
+    (testpath/"test.cpp").write <<-EOS
       #include "systemc.h"
 
       int sc_main(int argc, char *argv[]) {

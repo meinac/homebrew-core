@@ -43,7 +43,7 @@ class Noweb < Formula
     end
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     TeX support files are installed in the directory:
 
       #{texpath}

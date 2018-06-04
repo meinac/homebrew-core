@@ -29,7 +29,7 @@ class IslAT011 < Formula
   end
 
   test do
-    (testpath/"test.c").write <<-EOS.undent
+    (testpath/"test.c").write <<-EOS
       #include <isl/ctx.h>
 
       int main()

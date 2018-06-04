@@ -11,7 +11,7 @@ class Arm < Formula
     bin.write_exec_script pkgshare/"arm"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     You'll need to enable the Tor Control Protocol in your torrc.
     See here for details: https://www.torproject.org/tor-manual.html.en
 

@@ -28,7 +28,7 @@ class Snescom < Formula
   end
 
   test do
-    (testpath/"test.a65").write <<-EOS.undent
+    (testpath/"test.a65").write <<-EOS
       GAME_MAIN:
         rts
     EOS

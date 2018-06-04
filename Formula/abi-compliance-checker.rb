@@ -20,7 +20,7 @@ class AbiComplianceChecker < Formula
   end
 
   test do
-    (testpath/"test.xml").write <<-EOS.undent
+    (testpath/"test.xml").write <<-EOS
       <version>1.0</version>
       <headers>#{Formula["ctags"].include}</headers>
       <libs>#{Formula["ctags"].lib}</libs>

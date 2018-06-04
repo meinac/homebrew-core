@@ -16,7 +16,7 @@ class BashGitPrompt < Formula
     doc.install "README.md"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     You should add the following to your .bashrc (or equivalent):
       if [ -f #{HOMEBREW_PREFIX}/share/gitprompt.sh ]; then
         GIT_PROMPT_THEME=Default

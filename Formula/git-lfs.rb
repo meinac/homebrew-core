@@ -18,7 +18,7 @@ class GitLfs < Formula
     bin.install "bin/git-lfs"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     Update your git config to finish installation:
 
       # Update global git config

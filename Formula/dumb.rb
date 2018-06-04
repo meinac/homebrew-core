@@ -13,7 +13,7 @@ class Dumb < Formula
   end
 
   def install
-    (buildpath/"make/config.txt").write <<-EOS.undent
+    (buildpath/"make/config.txt").write <<-EOS
       include make/unix.inc
       ALL_TARGETS := core core-examples core-headers
       PREFIX := #{prefix}

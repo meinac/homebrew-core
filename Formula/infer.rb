@@ -56,7 +56,7 @@ class Infer < Formula
   end
 
   test do
-    (testpath/"FailingTest.c").write <<-EOS.undent
+    (testpath/"FailingTest.c").write <<-EOS
       #include <stdio.h>
 
       int main() {
@@ -67,7 +67,7 @@ class Infer < Formula
       }
     EOS
 
-    (testpath/"PassingTest.c").write <<-EOS.undent
+    (testpath/"PassingTest.c").write <<-EOS
       #include <stdio.h>
 
       int main() {
@@ -83,7 +83,7 @@ class Infer < Formula
     shell_output("#{bin}/infer --fail-on-issue -- clang -c FailingTest.c", 2)
     shell_output("#{bin}/infer --fail-on-issue -- clang -c PassingTest.c", 0)
 
-    (testpath/"FailingTest.java").write <<-EOS.undent
+    (testpath/"FailingTest.java").write <<-EOS
       class FailingTest {
 
         String mayReturnNull(int i) {
@@ -100,7 +100,7 @@ class Infer < Formula
       }
     EOS
 
-    (testpath/"PassingTest.java").write <<-EOS.undent
+    (testpath/"PassingTest.java").write <<-EOS
       class PassingTest {
 
         String mayReturnNull(int i) {

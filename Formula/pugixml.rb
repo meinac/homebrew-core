@@ -23,7 +23,7 @@ class Pugixml < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<-EOS.undent
+    (testpath/"test.cpp").write <<-EOS
       #include <pugixml.hpp>
       #include <cassert>
       #include <cstring>
@@ -37,7 +37,7 @@ class Pugixml < Formula
       }
     EOS
 
-    (testpath/"test.xml").write <<-EOS.undent
+    (testpath/"test.xml").write <<-EOS
       <root>Hello world!</root>
     EOS
 

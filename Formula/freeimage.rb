@@ -39,7 +39,7 @@ class Freeimage < Formula
   end
 
   test do
-    (testpath/"test.c").write <<-EOS.undent
+    (testpath/"test.c").write <<-EOS
       #include <FreeImage.h>
       int main() {
          FreeImage_Initialise(0);
@@ -60,7 +60,7 @@ index b59c419..6e177fc
 --- a/Makefile.fip
 +++ b/Makefile.fip
 @@ -5,8 +5,9 @@ include fipMakefile.srcs
- 
+
  # General configuration variables:
  DESTDIR ?= /
 -INCDIR ?= $(DESTDIR)/usr/include
@@ -68,11 +68,11 @@ index b59c419..6e177fc
 +PREFIX ?= /usr/local
 +INCDIR ?= $(DESTDIR)$(PREFIX)/include
 +INSTALLDIR ?= $(DESTDIR)$(PREFIX)/lib
- 
+
  # Converts cr/lf to just lf
  DOS2UNIX = dos2unix
 @@ -35,9 +36,9 @@ endif
- 
+
  TARGET  = freeimageplus
  STATICLIB = lib$(TARGET).a
 -SHAREDLIB = lib$(TARGET)-$(VER_MAJOR).$(VER_MINOR).so
@@ -83,7 +83,7 @@ index b59c419..6e177fc
 +VERLIBNAME = lib$(TARGET).$(VER_MAJOR).dylib
  HEADER = Source/FreeImage.h
  HEADERFIP = Wrapper/FreeImagePlus/FreeImagePlus.h
- 
+
 @@ -49,7 +50,7 @@ all: dist
  dist: FreeImage
 	mkdir -p Dist
@@ -95,11 +95,11 @@ index b59c419..6e177fc
 
 @@ -68,14 +69,15 @@ $(STATICLIB): $(MODULES)
  	$(AR) r $@ $(MODULES)
- 
+
  $(SHAREDLIB): $(MODULES)
 -	$(CC) -s -shared -Wl,-soname,$(VERLIBNAME) $(LDFLAGS) -o $@ $(MODULES) $(LIBRARIES)
 +	$(CXX) -dynamiclib -install_name $(LIBNAME) -current_version $(VER_MAJOR).$(VER_MINOR) -compatibility_version $(VER_MAJOR) $(LDFLAGS) -o $@ $(MODULES)
- 
+
  install:
  	install -d $(INCDIR) $(INSTALLDIR)
 -	install -m 644 -o root -g root $(HEADER) $(INCDIR)
@@ -121,7 +121,7 @@ index 92f6358..264b70f
 --- a/Makefile.gnu
 +++ b/Makefile.gnu
 @@ -5,8 +5,9 @@ include Makefile.srcs
- 
+
  # General configuration variables:
  DESTDIR ?= /
 -INCDIR ?= $(DESTDIR)/usr/include
@@ -129,11 +129,11 @@ index 92f6358..264b70f
 +PREFIX ?= /usr/local
 +INCDIR ?= $(DESTDIR)$(PREFIX)/include
 +INSTALLDIR ?= $(DESTDIR)$(PREFIX)/lib
- 
+
  # Converts cr/lf to just lf
  DOS2UNIX = dos2unix
 @@ -35,9 +36,9 @@ endif
- 
+
  TARGET  = freeimage
  STATICLIB = lib$(TARGET).a
 -SHAREDLIB = lib$(TARGET)-$(VER_MAJOR).$(VER_MINOR).so
@@ -143,8 +143,8 @@ index 92f6358..264b70f
 +LIBNAME	= lib$(TARGET).dylib
 +VERLIBNAME = lib$(TARGET).$(VER_MAJOR).dylib
  HEADER = Source/FreeImage.h
- 
- 
+
+
 @@ -49,7 +50,7 @@ all: dist
  dist: FreeImage
 	mkdir -p Dist
@@ -152,15 +152,15 @@ index 92f6358..264b70f
 -	cp *.so Dist/
 +	cp *.dylib Dist/
 	cp Source/FreeImage.h Dist/
- 
+
  dos2unix:
 @@ -67,13 +68,13 @@ $(STATICLIB): $(MODULES)
  	$(AR) r $@ $(MODULES)
- 
+
  $(SHAREDLIB): $(MODULES)
 -	$(CC) -s -shared -Wl,-soname,$(VERLIBNAME) $(LDFLAGS) -o $@ $(MODULES) $(LIBRARIES)
 +	$(CXX) -dynamiclib -install_name $(LIBNAME) -current_version $(VER_MAJOR).$(VER_MINOR) -compatibility_version $(VER_MAJOR) $(LDFLAGS) -o $@ $(MODULES)
- 
+
  install:
  	install -d $(INCDIR) $(INSTALLDIR)
 -	install -m 644 -o root -g root $(HEADER) $(INCDIR)
@@ -170,5 +170,5 @@ index 92f6358..264b70f
 +	install -m 644 $(STATICLIB) $(INSTALLDIR)
 +	install -m 755 $(SHAREDLIB) $(INSTALLDIR)
  	ln -sf $(SHAREDLIB) $(INSTALLDIR)/$(VERLIBNAME)
- 	ln -sf $(VERLIBNAME) $(INSTALLDIR)/$(LIBNAME)	
+ 	ln -sf $(VERLIBNAME) $(INSTALLDIR)/$(LIBNAME)
  #	ldconfig

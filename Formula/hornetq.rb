@@ -8,7 +8,7 @@ class Hornetq < Formula
   bottle :unneeded
 
   def wrapper_script(target)
-    <<-EOS.undent
+    <<-EOS
       #!/bin/bash
       cd #{libexec}/bin/
       ./#{target} "$@"

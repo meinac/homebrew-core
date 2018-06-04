@@ -20,7 +20,7 @@ class Flasm < Formula
   end
 
   test do
-    (testpath/"test").write <<-EOS.undent
+    (testpath/"test").write <<-EOS
       constants 'a', 'b'
       push 'a', 'b'
       getVariable

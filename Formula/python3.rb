@@ -60,7 +60,7 @@ class Python3 < Formula
   # setuptools remembers the build flags python is built with and uses them to
   # build packages later. Xcode-only systems need different flags.
   pour_bottle? do
-    reason <<-EOS.undent
+    reason <<-EOS
     The bottle needs the Apple Command Line Tools to be installed.
       You can install them, if desired, with:
         xcode-select --install
@@ -317,7 +317,7 @@ class Python3 < Formula
     else
       xy = version.to_s.slice(/(3\.\d)/) || "3.6"
     end
-    text = <<-EOS.undent
+    text = <<-EOS
       Pip, setuptools, and wheel have been installed. To update them
         pip3 install --upgrade pip setuptools wheel
 
@@ -331,7 +331,7 @@ class Python3 < Formula
     EOS
 
     # Tk warning only for 10.6
-    tk_caveats = <<-EOS.undent
+    tk_caveats = <<-EOS
 
       Apple's Tcl/Tk is not recommended for use with Python on Mac OS X 10.6.
       For more information see: https://www.python.org/download/mac/tcltk/

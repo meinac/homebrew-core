@@ -31,7 +31,7 @@ class Httest < Formula
   end
 
   test do
-    (testpath/"test.htt").write <<-EOS.undent
+    (testpath/"test.htt").write <<-EOS
       CLIENT 5
         _TIME time
       END

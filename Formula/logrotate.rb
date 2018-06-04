@@ -40,7 +40,7 @@ class Logrotate < Formula
 
   plist_options :manual => "logrotate"
 
-  def plist; <<-EOS.undent
+  def plist; <<-EOS
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
     <plist version="1.0">
@@ -68,7 +68,7 @@ class Logrotate < Formula
 
   test do
     (testpath/"test.log").write("testlograndomstring")
-    (testpath/"testlogrotate.conf").write <<-EOS.undent
+    (testpath/"testlogrotate.conf").write <<-EOS
         #{testpath}/test.log {
         size 1
         copytruncate
@@ -87,7 +87,7 @@ index 5a42fb6..e53f4f7 100644
 @@ -86,6 +86,22 @@ ifneq ($(POPT_DIR),)
      LOADLIBES += -L$(POPT_DIR)
  endif
- 
+
 +ifneq ($(COMPRESS_COMMAND),)
 +    CFLAGS += -DCOMPRESS_COMMAND=\"$(COMPRESS_COMMAND)\"
 +endif
@@ -114,11 +114,11 @@ index 56e9103..c61a33a 100644
 @@ -14,22 +14,7 @@ dateext
  # uncomment this if you want your log files compressed
  #compress
- 
+
 -# RPM packages drop log rotation information into this directory
 +# Homebrew packages drop log rotation information into this directory
  include /etc/logrotate.d
- 
+
 -# no packages own wtmp and btmp -- we'll rotate them here
 -/var/log/wtmp {
 -    monthly

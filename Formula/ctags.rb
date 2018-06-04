@@ -45,7 +45,7 @@ class Ctags < Formula
   end
 
   def caveats
-    <<-EOS.undent
+    <<-EOS
       Under some circumstances, emacs and ctags can conflict. By default,
       emacs provides an executable `ctags` that would conflict with the
       executable of the same name that ctags provides. To prevent this,
@@ -59,7 +59,7 @@ class Ctags < Formula
   end
 
   test do
-    (testpath/"test.c").write <<-EOS.undent
+    (testpath/"test.c").write <<-EOS
       #include <stdio.h>
       #include <stdlib.h>
 
@@ -86,7 +86,7 @@ diff -ur a/ctags-5.8/read.c b/ctags-5.8/read.c
 @@ -18,7 +18,6 @@
  #include <string.h>
  #include <ctype.h>
- 
+
 -#define FILE_WRITE
  #include "read.h"
  #include "debug.h"
@@ -97,7 +97,7 @@ diff -ur a/ctags-5.8/read.h b/ctags-5.8/read.h
 @@ -11,12 +11,6 @@
  #ifndef _READ_H
  #define _READ_H
- 
+
 -#if defined(FILE_WRITE) || defined(VAXC)
 -# define CONST_FILE
 -#else
@@ -113,6 +113,6 @@ diff -ur a/ctags-5.8/read.h b/ctags-5.8/read.h
  */
 -extern CONST_FILE inputFile File;
 +extern inputFile File;
- 
+
  /*
  *   FUNCTION PROTOTYPES

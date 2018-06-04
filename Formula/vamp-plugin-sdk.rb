@@ -31,7 +31,7 @@ class VampPluginSdk < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<-EOS.undent
+    (testpath/"test.cpp").write <<-EOS
       #include "vamp-sdk/Plugin.h"
       #include <vamp-sdk/PluginAdapter.h>
 

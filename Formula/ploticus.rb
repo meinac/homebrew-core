@@ -27,7 +27,7 @@ class Ploticus < Formula
     pkgshare.install Dir["prefabs/*"]
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     Ploticus prefabs have been installed to #{opt_pkgshare}
   EOS
   end

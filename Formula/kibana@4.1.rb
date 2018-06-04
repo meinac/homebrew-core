@@ -71,7 +71,7 @@ class KibanaAT41 < Formula
     ln_s var/"kibana/plugins", prefix/"plugins"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     Plugins: #{var}/kibana/plugins/
     Config: #{etc}/kibana/
     EOS
@@ -79,7 +79,7 @@ class KibanaAT41 < Formula
 
   plist_options :manual => "kibana"
 
-  def plist; <<-EOS.undent
+  def plist; <<-EOS
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
     "http://www.apple.com/DTDs/PropertyList-1.0.dtd">

@@ -23,7 +23,7 @@ class Cflow < Formula
   end
 
   test do
-    (testpath/"whoami.c").write <<-EOS.undent
+    (testpath/"whoami.c").write <<-EOS
      #include <pwd.h>
      #include <sys/types.h>
      #include <stdio.h>

@@ -18,7 +18,7 @@ class Cppp < Formula
   end
 
   test do
-    (testpath/"hello.c").write <<-EOS.undent
+    (testpath/"hello.c").write <<-EOS
     /* Comments stand for code */
     #ifdef FOO
     /* FOO is defined */

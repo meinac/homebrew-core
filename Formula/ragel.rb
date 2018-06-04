@@ -26,7 +26,7 @@ class Ragel < Formula
 
   test do
     testfile = testpath/"rubytest.rl"
-    testfile.write <<-EOS.undent
+    testfile.write <<-EOS
     %%{
       machine homebrew_test;
       main := ( 'h' @ { puts "homebrew" }

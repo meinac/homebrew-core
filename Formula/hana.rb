@@ -21,7 +21,7 @@ class Hana < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<-EOS.undent
+    (testpath/"test.cpp").write <<-EOS
       #include <boost/hana.hpp>
 
       constexpr auto xs = boost::hana::make_tuple(1, '2', 3.3);

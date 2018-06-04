@@ -36,7 +36,7 @@ class KafkaAT080 < Formula
     (etc/"kafka").install Dir["config/*"]
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     To start Kafka, ensure that ZooKeeper is running and then execute:
       kafka-server-start.sh #{etc}/kafka/server.properties
     EOS

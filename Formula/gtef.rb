@@ -24,7 +24,7 @@ class Gtef < Formula
   end
 
   test do
-    (testpath/"test.c").write <<-EOS.undent
+    (testpath/"test.c").write <<-EOS
       #include <gtef/gtef.h>
 
       int main(int argc, char *argv[]) {

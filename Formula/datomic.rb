@@ -18,7 +18,7 @@ class Datomic < Formula
   end
 
   def caveats
-    <<-EOS.undent
+    <<-EOS
       All commands have been installed with the prefix "datomic-".
 
       We agreed to the Datomic Free Edition License for you:

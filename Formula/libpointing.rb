@@ -20,7 +20,7 @@ class Libpointing < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<-EOS.undent
+    (testpath/"test.cpp").write <<-EOS
       #include <pointing/pointing.h>
       #include <iostream>
       int main() {

@@ -82,7 +82,7 @@ class Gearman < Formula
 
   plist_options :manual => "gearmand -d"
 
-  def plist; <<-EOS.undent
+  def plist; <<-EOS
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
     "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -111,7 +111,7 @@ index 7f6d5e7..a39978a 100644
 +++ b/libgearman-1.0/gearman.h
 @@ -50,7 +50,11 @@
  #endif
- 
+
  #ifdef __cplusplus
 +#ifdef _LIBCPP_VERSION
  #  include <cinttypes>
@@ -128,7 +128,7 @@ index 674fed9..b2e2182 100644
 @@ -65,6 +65,8 @@ static inline uint64_t swap64(uint64_t in)
  }
  #endif
- 
+
 +#ifndef HAVE_HTONLL
 +
  uint64_t ntohll(uint64_t value)
@@ -147,9 +147,9 @@ index d76d479..324f535 100644
 @@ -946,7 +946,7 @@ gearman_return_t gearman_client_job_status(gearman_client_st *client_shell,
        *denominator= do_task->impl()->denominator;
      }
- 
+
 -    if (is_known == false and is_running == false)
 +    if (! is_known and ! is_running)
      {
-       if (do_task->impl()->options.is_running) 
+       if (do_task->impl()->options.is_running)
        {

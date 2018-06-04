@@ -65,7 +65,7 @@ class Ffmbc < Formula
   end
 
   def caveats
-    <<-EOS.undent
+    <<-EOS
       Due to naming conflicts with other FFmpeg forks, this formula installs
       only static binaries - no shared libraries are built.
 
@@ -85,11 +85,11 @@ index 18531be..88b0a3f 100755
 --- a/doc/texi2pod.pl
 +++ b/doc/texi2pod.pl
 @@ -297,6 +297,8 @@ $inf = pop @instack;
- 
+
  die "No filename or title\n" unless defined $fn && defined $tl;
- 
+
 +print "=encoding utf8\n\n";
 +
  $sects{NAME} = "$fn \- $tl\n";
  $sects{FOOTNOTES} .= "=back\n" if exists $sects{FOOTNOTES};
- 
+

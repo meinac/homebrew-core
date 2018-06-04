@@ -55,7 +55,7 @@ class Minbif < Formula
     (var/"lib/minbif/users").mkpath
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     Minbif must be passed its config as first argument:
         minbif #{etc}/minbif/minbif.conf
 

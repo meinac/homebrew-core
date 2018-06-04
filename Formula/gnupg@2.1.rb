@@ -79,7 +79,7 @@ class GnupgAT21 < Formula
     (var/"run").mkpath
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     Once you run the new gpg2 binary you will find it incredibly
     difficult to go back to using `gnupg2` from Homebrew/Homebrew.
     The new 2.1.x moves to a new keychain format that can't be

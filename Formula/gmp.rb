@@ -26,7 +26,7 @@ class Gmp < Formula
   end
 
   test do
-    (testpath/"test.c").write <<-EOS.undent
+    (testpath/"test.c").write <<-EOS
       #include <gmp.h>
 
       int main()

@@ -20,7 +20,7 @@ class GameMusicEmu < Formula
   end
 
   test do
-    (testpath/"test.c").write <<-EOS.undent
+    (testpath/"test.c").write <<-EOS
       #include <gme/gme.h>
       int main(void)
       {

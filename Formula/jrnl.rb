@@ -64,7 +64,7 @@ class Jrnl < Formula
   end
 
   test do
-    (testpath/"write_journal.sh").write <<-EOS.undent
+    (testpath/"write_journal.sh").write <<-EOS
       #!/usr/bin/expect -f
       set timeout -1
       spawn #{bin}/jrnl today: Wrote this fancy test.

@@ -37,7 +37,7 @@ class Pcrexx < Formula
     mv man3/"Pcre.3", man3/"pcre++.3"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     The man page has been renamed to pcre++.3 to avoid conflicts with
     pcre in case-insensitive file system.  Please use "man pcre++"
     instead.
@@ -55,11 +55,11 @@ index d80b387..21869fc 100644
  #include <stdexcept>
  #include <iostream>
 +#include <clocale>
- 
- 
+
+
  extern "C" {
    #include <pcre.h>
 -  #include <locale.h>
  }
- 
+
  namespace pcrepp {

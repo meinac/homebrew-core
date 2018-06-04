@@ -48,7 +48,7 @@ class Plod < Formula
     PLODRC
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
       Emacs users may want to peruse the two available plod modes. They've been
       installed at:
 

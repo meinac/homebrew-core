@@ -38,7 +38,7 @@ class Mcrypt < Formula
   end
 
   test do
-    (testpath/"test.txt").write <<-EOS.undent
+    (testpath/"test.txt").write <<-EOS
       Hello, world!
     EOS
     system bin/"mcrypt", "--key", "TestPassword", "--force", "test.txt"

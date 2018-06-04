@@ -95,7 +95,7 @@ class Buku < Formula
     ENV["XDG_DATA_HOME"] = "#{testpath}/.local/share"
 
     # Firefox exported bookmarks file
-    (testpath/"bookmarks.html").write <<-EOS.undent
+    (testpath/"bookmarks.html").write <<-EOS
       <!DOCTYPE NETSCAPE-Bookmark-file-1>
       <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
       <TITLE>Bookmarks</TITLE>
@@ -115,7 +115,7 @@ class Buku < Formula
     system bin/"buku", "--update"
 
     # Test crypto functionality
-    (testpath/"crypto-test").write <<-EOS.undent
+    (testpath/"crypto-test").write <<-EOS
       # Lock bookmark database
       spawn buku --lock
       expect "Password: "

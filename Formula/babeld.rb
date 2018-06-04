@@ -19,7 +19,7 @@ class Babeld < Formula
 
   test do
     shell_output("#{bin}/babeld -I #{testpath}/test.pid -L #{testpath}/test.log", 1)
-    expected = <<-EOS.undent
+    expected = <<-EOS
       Couldn't tweak forwarding knob.: Operation not permitted
       kernel_setup failed.
     EOS

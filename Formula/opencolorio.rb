@@ -58,7 +58,7 @@ class Opencolorio < Formula
   end
 
   def caveats
-    <<-EOS.undent
+    <<-EOS
       OpenColorIO requires several environment variables to be set.
       You can source the following script in your shell-startup to do that:
 
@@ -86,6 +86,6 @@ index 561ce50..796ca84 100644
  #include <string>
  #include <cstddef>
 +#include <unistd.h>
- 
+
  #include "OpenColorABI.h"
  #include "OpenColorTypes.h"

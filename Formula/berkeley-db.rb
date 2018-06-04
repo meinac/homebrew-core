@@ -43,7 +43,7 @@ class BerkeleyDb < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<-EOS.undent
+    (testpath/"test.cpp").write <<-EOS
       #include <assert.h>
       #include <string.h>
       #include <db_cxx.h>

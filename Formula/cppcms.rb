@@ -26,7 +26,7 @@ class Cppcms < Formula
   end
 
   test do
-    (testpath/"hello.cpp").write <<-EOS.undent
+    (testpath/"hello.cpp").write <<-EOS
       #include <cppcms/application.h>
       #include <cppcms/applications_pool.h>
       #include <cppcms/service.h>
@@ -67,7 +67,7 @@ class Cppcms < Formula
       }
     EOS
 
-    (testpath/"config.json").write <<-EOS.undent
+    (testpath/"config.json").write <<-EOS
       {
           "service" : {
               "api" : "http",

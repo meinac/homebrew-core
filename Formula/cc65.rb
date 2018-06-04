@@ -31,7 +31,7 @@ class Cc65 < Formula
     end
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     Library files have been installed to:
       #{pkgshare}
     EOS

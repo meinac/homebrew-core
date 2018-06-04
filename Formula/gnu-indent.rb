@@ -38,7 +38,7 @@ class GnuIndent < Formula
   test do
     (testpath/"test.c").write("int main(){ return 0; }")
     system "#{bin}/gindent", "test.c"
-    assert_equal File.read("test.c"), <<-EOS.undent
+    assert_equal File.read("test.c"), <<-EOS
       int
       main ()
       {
@@ -55,8 +55,8 @@ index 76839bc..8a5fc6e 100644
 +++ b/man/Makefile.in
 @@ -507,7 +507,7 @@ uninstall-man: uninstall-man1
  	uninstall-man uninstall-man1
- 
- 
+
+
 -@PACKAGE@.1: ${srcdir}/@PACKAGE@.1.in  ${srcdir}/../doc/@PACKAGE@.texinfo texinfo2man.c  Makefile.am
 +@PACKAGE@.1: ${srcdir}/@PACKAGE@.1.in  ${srcdir}/../doc/@PACKAGE@.texinfo texinfo2man.c  Makefile.am texinfo2man
  	./texinfo2man ${srcdir}/@PACKAGE@.1.in ${srcdir}/../doc/@PACKAGE@.texinfo > $@
@@ -72,4 +72,4 @@ index e7d82e1..c95266f 100644
 -#include <malloc.h>
  #include <string.h>
  #include <ctype.h>
- 
+

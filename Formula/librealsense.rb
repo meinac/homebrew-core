@@ -30,7 +30,7 @@ class Librealsense < Formula
   end
 
   test do
-    (testpath/"test.c").write <<-EOS.undent
+    (testpath/"test.c").write <<-EOS
       #include <librealsense/rs.h>
       #include<stdio.h>
       int main()

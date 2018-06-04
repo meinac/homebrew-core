@@ -11,7 +11,7 @@ class Nss < Formula
     sha256 "a371c2dc8dc41efce10c15ba4e33f2d94def1fe3beee2388149a087c1f3c93d3" => :yosemite
   end
 
-  keg_only <<-EOS.undent
+  keg_only <<-EOS
     Having this library symlinked makes Firefox pick it up instead of built-in,
     so it then randomly crashes without meaningful explanation.
 
@@ -76,7 +76,7 @@ class Nss < Formula
 
   # A very minimal nss-config for configuring firefox etc. with this nss,
   # see https://bugzil.la/530672 for the progress of upstream inclusion.
-  def config_file; <<-EOS.undent
+  def config_file; <<-EOS
     #!/bin/sh
     for opt; do :; done
     case "$opt" in
@@ -88,7 +88,7 @@ class Nss < Formula
     EOS
   end
 
-  def pc_file; <<-EOS.undent
+  def pc_file; <<-EOS
     prefix=#{prefix}
     exec_prefix=${prefix}
     libdir=${exec_prefix}/lib

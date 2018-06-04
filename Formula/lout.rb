@@ -21,7 +21,7 @@ class Lout < Formula
 
   test do
     input = "test.lout"
-    (testpath/input).write <<-EOS.undent
+    (testpath/input).write <<-EOS
       @SysInclude { doc }
       @Doc @Text @Begin
       @Display @Heading { Blindtext }

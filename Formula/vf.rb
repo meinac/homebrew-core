@@ -13,7 +13,7 @@ class Vf < Formula
     prefix.install Dir["*"]
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     To complete installation, add the following line to your shell's rc file:
       source #{prefix}/vf.sh
     EOS

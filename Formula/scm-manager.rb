@@ -25,7 +25,7 @@ class ScmManager < Formula
 
     libexec.install Dir["*"]
 
-    (bin/"scm-server").write <<-EOS.undent
+    (bin/"scm-server").write <<-EOS
       #!/bin/bash
       BASEDIR="#{libexec}"
       REPO="#{libexec}/lib"
@@ -38,7 +38,7 @@ class ScmManager < Formula
     tools.install resource("client")
 
     scm_cli_client = bin/"scm-cli-client"
-    scm_cli_client.write <<-EOS.undent
+    scm_cli_client.write <<-EOS
       #!/bin/bash
       java -jar "#{tools}/scm-cli-client-#{version}-jar-with-dependencies.jar" "$@"
     EOS
@@ -47,7 +47,7 @@ class ScmManager < Formula
 
   plist_options :manual => "scm-server start"
 
-  def plist; <<-EOS.undent
+  def plist; <<-EOS
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
     <plist version="1.0">

@@ -27,7 +27,7 @@ class Shyaml < Formula
   end
 
   test do
-    yaml = <<-EOS.undent
+    yaml = <<-EOS
       key: val
       arr:
         - 1st

@@ -8,7 +8,7 @@ class Skinny < Formula
 
   def install
     libexec.install Dir["*"]
-    (bin/"skinny").write <<-EOS.undent
+    (bin/"skinny").write <<-EOS
       #!/bin/bash
       export PATH=#{bin}:$PATH
       PREFIX="#{libexec}" exec "#{libexec}/skinny" "$@"

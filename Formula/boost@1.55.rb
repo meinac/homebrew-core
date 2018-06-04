@@ -77,7 +77,7 @@ class BoostAT155 < Formula
 
     # https://svn.boost.org/trac/boost/ticket/8841
     if build.with?("mpi") && build.with?("single")
-      raise <<-EOS.undent
+      raise <<-EOS
         Building MPI support for both single and multi-threaded flavors
         is not supported.  Please use "--with-mpi" together with
         "--without-single".
@@ -86,7 +86,7 @@ class BoostAT155 < Formula
 
     if build.cxx11? && build.with?("mpi") && (build.with?("python") \
                                                || build.with?("python3"))
-      raise <<-EOS.undent
+      raise <<-EOS
         Building MPI support for Python using C++11 mode results in
         failure and hence disabled.  Please don"t use this combination
         of options.
@@ -104,7 +104,7 @@ class BoostAT155 < Formula
         py3version = `python3 -c "import sys; print(sys.version[:3])"`.strip
         py3prefix = `python3 -c "import sys; print(sys.prefix)"`.strip
 
-        file.write <<-EOS.undent
+        file.write <<-EOS
           using python : #{py3version}
                        : #{py3executable}
                        : #{py3prefix}/include/python#{py3version}m
@@ -173,7 +173,7 @@ class BoostAT155 < Formula
     # ENV.compiler doesn"t exist in caveats. Check library availability
     # instead.
     if Dir["#{lib}/libboost_log*"].empty?
-      s += <<-EOS.undent
+      s += <<-EOS
 
       Building of Boost.Log is disabled because it requires newer GCC or Clang.
       EOS
@@ -183,7 +183,7 @@ class BoostAT155 < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<-EOS.undent
+    (testpath/"test.cpp").write <<-EOS
       #include <boost/algorithm/string.hpp>
       #include <boost/version.hpp>
       #include <string>

@@ -21,7 +21,7 @@ class Daq < Formula
   end
 
   test do
-    (testpath/"test.c").write <<-EOS.undent
+    (testpath/"test.c").write <<-EOS
       #include <daq.h>
       #include <stdio.h>
 

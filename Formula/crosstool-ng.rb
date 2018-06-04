@@ -51,7 +51,7 @@ class CrosstoolNg < Formula
     system "make", "install"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     You will need to install a modern gcc compiler in order to use this tool.
     EOS
   end

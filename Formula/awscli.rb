@@ -30,7 +30,7 @@ class Awscli < Formula
     zsh_completion.install "bin/aws_zsh_completer.sh" => "_aws"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     The "examples" directory has been installed to:
       #{HOMEBREW_PREFIX}/share/awscli/examples
     EOS

@@ -68,7 +68,7 @@ class Mypy < Formula
     xy = Language::Python.major_minor_version "python3"
     ENV["PYTHONPATH"] = libexec/"lib/python#{xy}/site-packages"
 
-    (testpath/"broken.py").write <<-EOS.undent
+    (testpath/"broken.py").write <<-EOS
       def p() -> None:
         print ('hello')
       a = p()

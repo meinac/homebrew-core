@@ -25,7 +25,7 @@ class GitFtp < Formula
       man1.install "man/git-ftp.1"
     end
     libexec.install bin/"git-ftp"
-    (bin/"git-ftp").write <<-EOS.undent
+    (bin/"git-ftp").write <<-EOS
       #!/bin/sh
       PATH=#{Formula["curl"].opt_bin}:$PATH
       #{libexec}/git-ftp "$@"

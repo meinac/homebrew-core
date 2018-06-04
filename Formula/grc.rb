@@ -33,7 +33,7 @@ class Grc < Formula
     end
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     New shell sessions will start using GRC after you add this to your profile:
       . #{etc}/grc.bashrc
     EOS

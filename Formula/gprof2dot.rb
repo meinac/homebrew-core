@@ -25,7 +25,7 @@ class Gprof2dot < Formula
   end
 
   test do
-    (testpath/"gprof.output").write <<-EOS.undent
+    (testpath/"gprof.output").write <<-EOS
       Flat profile:
 
       Each sample counts as 0.01 seconds.
@@ -175,7 +175,7 @@ class Gprof2dot < Formula
        for that member, how many times it was called from other members of
        the cycle.
 
-      
+
       Index by function name
 
          [1] manager                 [5] project2                [3] worker2

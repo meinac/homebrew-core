@@ -178,7 +178,7 @@ class Gcc < Formula
   end
 
   def caveats
-    if build.with?("multilib") then <<-EOS.undent
+    if build.with?("multilib") then <<-EOS
       GCC has been built with multilib support. Notably, OpenMP may not work:
         https://gcc.gnu.org/bugzilla/show_bug.cgi?id=60670
       If you need OpenMP support you may want to
@@ -188,7 +188,7 @@ class Gcc < Formula
   end
 
   test do
-    (testpath/"hello-c.c").write <<-EOS.undent
+    (testpath/"hello-c.c").write <<-EOS
       #include <stdio.h>
       int main()
       {
@@ -199,7 +199,7 @@ class Gcc < Formula
     system "#{bin}/gcc-#{version_suffix}", "-o", "hello-c", "hello-c.c"
     assert_equal "Hello, world!\n", `./hello-c`
 
-    (testpath/"hello-cc.cc").write <<-EOS.undent
+    (testpath/"hello-cc.cc").write <<-EOS
       #include <iostream>
       int main()
       {
@@ -211,7 +211,7 @@ class Gcc < Formula
     assert_equal "Hello, world!\n", `./hello-cc`
 
     if build.with?("fortran") || build.with?("all-languages")
-      fixture = <<-EOS.undent
+      fixture = <<-EOS
         integer,parameter::m=10000
         real::a(m), b(m)
         real::fact=0.5

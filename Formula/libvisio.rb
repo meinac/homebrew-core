@@ -29,7 +29,7 @@ class Libvisio < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<-EOS.undent
+    (testpath/"test.cpp").write <<-EOS
       #include <librevenge-stream/librevenge-stream.h>
       #include <libvisio/VisioDocument.h>
       int main() {

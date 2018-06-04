@@ -20,7 +20,7 @@ class MpfrAT2 < Formula
 
   fails_with :clang do
     build 421
-    cause <<-EOS.undent
+    cause <<-EOS
       clang build 421 segfaults while building in superenv;
       see https://github.com/mxcl/homebrew/issues/15061
       EOS
@@ -50,7 +50,7 @@ class MpfrAT2 < Formula
   end
 
   test do
-    (testpath/"test.c").write <<-EOS.undent
+    (testpath/"test.c").write <<-EOS
       #include <gmp.h>
       #include <mpfr.h>
 

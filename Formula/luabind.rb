@@ -60,7 +60,7 @@ class Luabind < Formula
     (lib/"pkgconfig/luabind.pc").write pc_file
   end
 
-  def pc_file; <<-EOS.undent
+  def pc_file; <<-EOS
     prefix=#{HOMEBREW_PREFIX}
     exec_prefix=${prefix}
     libdir=${exec_prefix}/lib
@@ -75,7 +75,7 @@ class Luabind < Formula
   end
 
   test do
-    (testpath/"hello.cpp").write <<-EOS.undent
+    (testpath/"hello.cpp").write <<-EOS
       extern "C" {
       #include <lua.h>
       }

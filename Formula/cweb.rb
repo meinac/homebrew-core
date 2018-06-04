@@ -32,7 +32,7 @@ class Cweb < Formula
   end
 
   test do
-    (testpath/"test.w").write <<-EOS.undent
+    (testpath/"test.w").write <<-EOS
       @* Hello World
       This is a minimal program written in CWEB.
 

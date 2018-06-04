@@ -24,7 +24,7 @@ class LibxdgBasedir < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<-EOS.undent
+    (testpath/"test.cpp").write <<-EOS
       #include <basedir.h>
       int main() {
         xdgHandle handle;

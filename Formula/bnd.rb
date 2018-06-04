@@ -16,7 +16,7 @@ class Bnd < Formula
     test_sha = "baad835c6fa65afc1695cc92a9e1afe2967e546cae94d59fa9e49b557052b2b1"
     test_bsn = "org.apache.felix.gogo.runtime"
     test_file_name = "#{test_bsn}-1.0.0.jar"
-    (testpath/"index.xml").write <<-EOS.undent
+    (testpath/"index.xml").write <<-EOS
       <?xml version="1.0" encoding="utf-8"?>
       <repository increment="0" name="Untitled" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
         <resource>
@@ -31,7 +31,7 @@ class Bnd < Formula
       </repository>
     EOS
 
-    (testpath/"launch.bndrun").write <<-EOS.undent
+    (testpath/"launch.bndrun").write <<-EOS
       -standalone: index.xml
       -runrequires: osgi.identity;filter:='(osgi.identity=#{test_bsn})'
     EOS

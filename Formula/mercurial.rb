@@ -39,7 +39,7 @@ class Mercurial < Formula
     return unless (opt_bin/"hg").exist?
     cacerts_configured = `#{opt_bin}/hg config web.cacerts`.strip
     return if cacerts_configured.empty?
-    <<-EOS.undent
+    <<-EOS
       Homebrew has detected that Mercurial is configured to use a certificate
       bundle file as its trust store for TLS connections instead of using the
       default OpenSSL store. If you have trouble connecting to remote

@@ -32,7 +32,7 @@ class Lysp < Formula
   end
 
   test do
-    (testpath/"test.l").write <<-EOS.undent
+    (testpath/"test.l").write <<-EOS
       (define println (subr (dlsym "printlnSubr")))
       (define + (subr (dlsym "addSubr")))
       (println (+ 40 2))
@@ -52,24 +52,24 @@ index fc3f5d9..0b0e20d 100644
 -CFLAGSO = -O3 -g -Wall -DNDEBUG
 -CFLAGSs = -Os -g -Wall -DNDEBUG
  LDLIBS  = -rdynamic
- 
+
  all : lysp gclysp
 @@ -10,15 +7,15 @@ lysp : lysp.c gc.c
  	size $@
- 
+
  olysp: lysp.c gc.c
 -	$(CC) $(CFLAGSO) -DBDWGC=0 -o $@ lysp.c gc.c $(LDLIBS) -ldl
 +	$(CC) $(CFLAGS) -DBDWGC=0 -o $@ lysp.c gc.c $(LDLIBS) -ldl
  	size $@
- 
+
  ulysp: lysp.c gc.c
 -	$(CC) $(CFLAGSs) -DBDWGC=0 -o $@ lysp.c gc.c $(LDLIBS) -ldl
 +	$(CC) $(CFLAGS) -DBDWGC=0 -o $@ lysp.c gc.c $(LDLIBS) -ldl
  	size $@
- 
+
  gclysp: lysp.c
 -	$(CC) $(CFLAGSO) -DBDWGC=1  -o $@ lysp.c $(LDLIBS) -lgc
 +	$(CC) $(CFLAGS) -DBDWGC=1  -o $@ lysp.c $(LDLIBS) -lgc
  	size $@
- 
+
  run : all

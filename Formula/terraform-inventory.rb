@@ -33,7 +33,7 @@ class TerraformInventory < Formula
   end
 
   test do
-    example = <<-EOS.undent
+    example = <<-EOS
         {
             "version": 1,
             "serial": 1,

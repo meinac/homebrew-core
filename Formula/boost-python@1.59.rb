@@ -65,7 +65,7 @@ class BoostPythonAT159 < Formula
       open("user-config.jam", "w") do |file|
         # Force boost to compile with the desired compiler
         file.write "using darwin : : #{ENV.cxx} ;\n"
-        file.write <<-EOS.undent
+        file.write <<-EOS
           using python : #{version}
                        : #{python}
                        : #{py_include}
@@ -86,7 +86,7 @@ class BoostPythonAT159 < Formula
   end
 
   test do
-    (testpath/"hello.cpp").write <<-EOS.undent
+    (testpath/"hello.cpp").write <<-EOS
       #include <boost/python.hpp>
       char const* greet() {
         return "Hello, world!";

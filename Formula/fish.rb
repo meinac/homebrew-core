@@ -40,7 +40,7 @@ class Fish < Formula
     system "make", "install"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     You will need to add:
       #{HOMEBREW_PREFIX}/bin/fish
     to /etc/shells.

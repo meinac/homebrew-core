@@ -94,7 +94,7 @@ class Opam < Formula
     zsh_completion.install "shell/opam_completion_zsh.sh" => "_opam"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     OPAM uses ~/.opam by default for its package database, so you need to
     initialize it first by running (as a normal user):
 

@@ -9,7 +9,7 @@ class Kobalt < Formula
   def install
     libexec.install %w[kobalt]
 
-    (bin/"kobaltw").write <<-EOS.undent
+    (bin/"kobaltw").write <<-EOS
       #!/bin/bash
       java -jar #{libexec}/kobalt/wrapper/kobalt-wrapper.jar $*
     EOS
@@ -18,12 +18,12 @@ class Kobalt < Formula
   test do
     ENV.java_cache
 
-    (testpath/"src/main/kotlin/com/A.kt").write <<-EOS.undent
+    (testpath/"src/main/kotlin/com/A.kt").write <<-EOS
       package com
       class A
       EOS
 
-    (testpath/"kobalt/src/Build.kt").write <<-EOS.undent
+    (testpath/"kobalt/src/Build.kt").write <<-EOS
       import com.beust.kobalt.*
       import com.beust.kobalt.api.*
       import com.beust.kobalt.plugin.packaging.*

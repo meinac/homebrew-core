@@ -22,7 +22,7 @@ class GenerateJsonSchema < Formula
   end
 
   test do
-    input = <<-EOS.undent
+    input = <<-EOS
       {
           "id": 2,
           "name": "An ice sculpture",

@@ -178,13 +178,13 @@ class Subversion < Formula
   end
 
   def caveats
-    s = <<-EOS.undent
+    s = <<-EOS
       svntools have been installed to:
         #{opt_libexec}
     EOS
 
     if build.with? "perl"
-      s += <<-EOS.undent
+      s += <<-EOS
 
         The perl bindings are located in various subdirectories of:
           #{prefix}/Library/Perl
@@ -192,7 +192,7 @@ class Subversion < Formula
     end
 
     if build.with? "ruby"
-      s += <<-EOS.undent
+      s += <<-EOS
 
         You may need to add the Ruby bindings to your RUBYLIB from:
           #{HOMEBREW_PREFIX}/lib/ruby
@@ -200,7 +200,7 @@ class Subversion < Formula
     end
 
     if build.with? "java"
-      s += <<-EOS.undent
+      s += <<-EOS
 
         You may need to link the Java bindings into the Java Extensions folder:
           sudo mkdir -p /Library/Java/Extensions
@@ -224,21 +224,21 @@ index 445251b..6ff4332 100755
 +++ b/configure
 @@ -26153,6 +26153,8 @@ fi
  SWIG_CPPFLAGS="$CPPFLAGS"
- 
+
    SWIG_CPPFLAGS=`echo "$SWIG_CPPFLAGS" | $SED -e 's/-no-cpp-precomp //'`
 +  SWIG_CPPFLAGS=`echo "$SWIG_CPPFLAGS" | $SED -e 's/-F\/[^ ]* //'`
 +  SWIG_CPPFLAGS=`echo "$SWIG_CPPFLAGS" | $SED -e 's/-isystem\/[^ ]* //'`
- 
- 
+
+
    SWIG_CPPFLAGS=`echo "$SWIG_CPPFLAGS" | $SED -e 's/-Wdate-time //'`
 diff --git a/subversion/bindings/swig/perl/native/Makefile.PL.in b/subversion/bindings/swig/perl/native/Makefile.PL.in
 index a60430b..bd9b017 100644
 --- a/subversion/bindings/swig/perl/native/Makefile.PL.in
 +++ b/subversion/bindings/swig/perl/native/Makefile.PL.in
 @@ -76,10 +76,13 @@ my $apr_ldflags = '@SVN_APR_LIBS@'
- 
+
  chomp $apr_shlib_path_var;
- 
+
 +my $config_ccflags = $Config{ccflags};
 +$config_ccflags =~ s/-arch\s+\S+//g;
 +

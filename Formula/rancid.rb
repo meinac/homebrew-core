@@ -20,7 +20,7 @@ class Rancid < Formula
   end
 
   test do
-    (testpath/"rancid.conf").write <<-EOS.undent
+    (testpath/"rancid.conf").write <<-EOS
       BASEDIR=#{testpath}; export BASEDIR
       CVSROOT=$BASEDIR/CVS; export CVSROOT
       LOGDIR=$BASEDIR/logs; export LOGDIR

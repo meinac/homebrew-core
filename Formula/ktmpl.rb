@@ -19,7 +19,7 @@ class Ktmpl < Formula
   end
 
   test do
-    (testpath/"test.yml").write <<-EOS.undent
+    (testpath/"test.yml").write <<-EOS
       ---
       kind: "Template"
       apiVersion: "v1"

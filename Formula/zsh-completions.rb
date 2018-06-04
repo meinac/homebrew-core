@@ -13,7 +13,7 @@ class ZshCompletions < Formula
   end
 
   def caveats
-    <<-EOS.undent
+    <<-EOS
     To activate these completions, add the following to your .zshrc:
 
       fpath=(#{HOMEBREW_PREFIX}/share/zsh-completions $fpath)
@@ -30,7 +30,7 @@ class ZshCompletions < Formula
   end
 
   test do
-    (testpath/".zshrc").write <<-EOS.undent
+    (testpath/".zshrc").write <<-EOS
       fpath=(#{HOMEBREW_PREFIX}/share/zsh-completions $fpath)
       autoload -U compinit
       compinit

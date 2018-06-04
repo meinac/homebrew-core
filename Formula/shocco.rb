@@ -41,7 +41,7 @@ class Shocco < Formula
   end
 
   def caveats
-    <<-EOS.undent
+    <<-EOS
       You may also want to install browser:
         brew install browser
         shocco `which shocco` | browser

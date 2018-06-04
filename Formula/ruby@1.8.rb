@@ -35,7 +35,7 @@ class RubyAT18 < Formula
     # prefix those invocations with `env` to clean the environment for us.
     scrub_env = "/usr/bin/env RUBYLIB= RUBYOPT="
     inreplace "mkconfig.rb", "    if /^prefix$/ =~ name\n",
-              <<-EOS.undent.gsub(/^/, "    ")
+              <<-EOS.gsub(/^/, "    ")
                 # `env` removes stuff that will break `superenv`.
                 if %w[CC CPP LDSHARED LIBRUBY_LDSHARED].include?(name)
                   val = val.sub("\\"", "\\"#{scrub_env} ")
@@ -119,7 +119,7 @@ class RubyAT18 < Formula
     "#{HOMEBREW_PREFIX}/lib/ruby/gems/#{abi_version}/bin"
   end
 
-  def rubygems_config; <<-EOS.undent
+  def rubygems_config; <<-EOS
     module Gem
       class << self
         alias :old_default_dir :default_dir
@@ -184,7 +184,7 @@ class RubyAT18 < Formula
     EOS
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     By default, binaries installed by gem will be placed into:
       #{rubygems_bindir}
 

@@ -29,7 +29,7 @@ class Fdclone < Formula
     share.install "_fdrc" => "fd2rc.dist"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     To install the initial config file:
         install -c -m 0644 #{share}/fd2rc.dist ~/.fd2rc
     To set application messages to Japanese, edit your .fd2rc:
@@ -122,7 +122,7 @@ index 97aec7b..0a81bb9 100644
 +++ b/_fdrc
 @@ -7,8 +7,8 @@
  #BASICCUSTOM=0
- 
+
  # default sort type
 -#	0: not sort (Default)
 -#	1: alphabetical	9: alphabetical (reversal)
@@ -137,7 +137,7 @@ index 97aec7b..0a81bb9 100644
  #		(the least 2 digits are effective just after initialize)
 -#SORTTYPE=0
 +#SORTTYPE=1
- 
+
  # default display mode
 -#	0: normal (Default)
 +#	0: normal
@@ -151,7 +151,7 @@ index 97aec7b..0a81bb9 100644
  #	7: sym-link status &	file type symbol &	invisible dot file
 -#DISPLAYMODE=0
 +#DISPLAYMODE=3
- 
+
  # whether if sort or not in tree mode
 -#	0: not sort (Default)
 -#	>= 1: sort according to SORTTYPE
@@ -159,12 +159,12 @@ index 97aec7b..0a81bb9 100644
 +#	0: not sort
 +#	>= 1: sort according to SORTTYPE (Default)
 +#SORTTREE=1
- 
+
  # behavior about writing over directory on file system
  #	0: confirm to write or not, after directory arranged (Default)
 @@ -61,9 +61,9 @@
  #PRECOPYMENU=0
- 
+
  # whether if adjust tty or not when exiting
 -#	0: not adjust (Default)
 -#	>= 1: adjust
@@ -172,12 +172,12 @@ index 97aec7b..0a81bb9 100644
 +#	0: not adjust
 +#	>= 1: adjust (Default)
 +#ADJTTY=1
- 
+
  # whether if prioritize VT100 escape sequence or not for getting terminal size
  #	0: not prioritize (Default)
 @@ -179,11 +179,11 @@
  #FREQUMASK=022
- 
+
  # whether if support ANSI color escape sequence
 -#	0: monochrome (Default)
 -#	1: color
@@ -187,12 +187,12 @@ index 97aec7b..0a81bb9 100644
  #	3: color & force foreground to blacken
 -#ANSICOLOR=0
 +#ANSICOLOR=1
- 
+
  # color palette in the ANSI color mode
  #	Default: none
 @@ -374,9 +374,9 @@
  #HTMLLOGFILE=""
- 
+
  # whether if hold the UNICODE translation table on memory
 -#	0: not hold (Default)
 -#	>= 1: hold
@@ -200,6 +200,6 @@ index 97aec7b..0a81bb9 100644
 +#	0: not hold
 +#	>= 1: hold (Default)
 +#UNICODEBUFFER=1
- 
+
  # language code to be displayed
  #	Default: No convert

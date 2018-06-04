@@ -27,7 +27,7 @@ class Ocamlsdl < Formula
   end
 
   test do
-    (testpath/"test.ml").write <<-EOS.undent
+    (testpath/"test.ml").write <<-EOS
       let main () =
         Sdl.init [`VIDEO];
         Sdl.quit ()

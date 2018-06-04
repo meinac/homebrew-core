@@ -28,7 +28,7 @@ class Lablgtk < Formula
   end
 
   test do
-    (testpath/"test.ml").write <<-EOS.undent
+    (testpath/"test.ml").write <<-EOS
       let _ =
         GtkMain.Main.init ()
     EOS

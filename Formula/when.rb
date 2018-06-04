@@ -19,7 +19,7 @@ class When < Formula
   end
 
   test do
-    (testpath/".when/preferences").write <<-EOS.undent
+    (testpath/".when/preferences").write <<-EOS
       calendar = #{testpath}/calendar
     EOS
 

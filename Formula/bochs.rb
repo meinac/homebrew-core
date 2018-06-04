@@ -63,7 +63,7 @@ class Bochs < Formula
   test do
     require "open3"
 
-    (testpath/"bochsrc.txt").write <<-EOS.undent
+    (testpath/"bochsrc.txt").write <<-EOS
         panic: action=fatal
         error: action=report
         info: action=ignore

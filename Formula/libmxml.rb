@@ -24,7 +24,7 @@ class Libmxml < Formula
   end
 
   test do
-    (testpath/"test.c").write <<-EOS.undent
+    (testpath/"test.c").write <<-EOS
       int testfunc(char *string)
       {
         return string ? string[0] : 0;

@@ -29,7 +29,7 @@ class Unpaper < Formula
   end
 
   test do
-    (testpath/"test.pbm").write <<-EOS.undent
+    (testpath/"test.pbm").write <<-EOS
       P1
       6 10
       0 0 0 0 1 0

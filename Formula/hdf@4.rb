@@ -52,7 +52,7 @@ class HdfAT4 < Formula
     end
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
       HDF4 has been superseeded by HDF5.  However, the API changed
       substantially and some programs still require the HDF4 libraries in order
       to function.

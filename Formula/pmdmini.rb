@@ -43,7 +43,7 @@ class Pmdmini < Formula
 
   test do
     resource("test_song").stage testpath
-    (testpath/"pmdtest.c").write <<-EOS.undent
+    (testpath/"pmdtest.c").write <<-EOS
     #include <stdio.h>
     #include "libpmdmini/pmdmini.h"
 

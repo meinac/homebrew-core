@@ -26,7 +26,7 @@ class Tbox < Formula
   end
 
   test do
-    (testpath/"test.c").write <<-EOS.undent
+    (testpath/"test.c").write <<-EOS
       #include <tbox/tbox.h>
       int main()
       {

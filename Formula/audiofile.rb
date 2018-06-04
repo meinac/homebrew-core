@@ -50,7 +50,7 @@ class Audiofile < Formula
     info_bin = "#{bin}/sfinfo"
 
     unless File.exist?(conv_bin) && File.exist?(inn) && File.exist?(info_bin)
-      opoo <<-EOS.undent
+      opoo <<-EOS
         One of the following files could not be located, and so
         the test was not executed:
            #{inn}

@@ -43,7 +43,7 @@ class Pachi < Formula
   end
 
   if (build.with? "book") || (build.with? "patterns")
-    def caveats; <<-EOS.undent
+    def caveats; <<-EOS
       This formula also downloads additional data, such as opening books and
       pattern files. They are stored in #{share}.
 

@@ -19,7 +19,7 @@ class Ssdeep < Formula
   end
 
   test do
-    expected = <<-EOS.undent
+    expected = <<-EOS
       ssdeep,1.1--blocksize:hash:hash,filename
       192:15Jsxlk/azhE79EEfpm0sfQ+CfQoDfpw3RtU:15JsPz+7OEBCYLYYB7,"#{include}/fuzzy.h"
     EOS

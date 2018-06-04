@@ -14,7 +14,7 @@ class Nodebrew < Formula
     zsh_completion.install "completions/zsh/_nodebrew"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     Add path:
       export PATH=$HOME/.nodebrew/current/bin:$PATH
 

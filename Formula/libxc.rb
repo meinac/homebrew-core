@@ -26,7 +26,7 @@ class Libxc < Formula
   end
 
   test do
-    (testpath/"test.c").write <<-EOS.undent
+    (testpath/"test.c").write <<-EOS
       #include <stdio.h>
       #include <xc.h>
       int main()
@@ -39,7 +39,7 @@ class Libxc < Formula
     system ENV.cc, "test.c", "-L#{lib}", "-lxc", "-I#{include}", "-o", "ctest"
     system "./ctest"
 
-    (testpath/"test.f90").write <<-EOS.undent
+    (testpath/"test.f90").write <<-EOS
       program lxctest
         use xc_f90_types_m
         use xc_f90_lib_m

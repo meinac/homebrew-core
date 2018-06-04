@@ -19,7 +19,7 @@ class Sqoop < Formula
   patch :DATA
 
   def sqoop_envs
-    <<-EOS.undent
+    <<-EOS
       export HADOOP_HOME="#{HOMEBREW_PREFIX}"
       export HBASE_HOME="#{HOMEBREW_PREFIX}"
       export HIVE_HOME="#{HOMEBREW_PREFIX}"
@@ -39,7 +39,7 @@ class Sqoop < Formula
     envs.write(sqoop_envs) unless envs.exist?
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     Hadoop, Hive, HBase and ZooKeeper must be installed and configured
     for Sqoop to work.
     EOS

@@ -26,7 +26,7 @@ class SimpleAmqpClient < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<-EOS.undent
+    (testpath/"test.cpp").write <<-EOS
       #include <SimpleAmqpClient/SimpleAmqpClient.h>
       #include <string>
       int main() {

@@ -26,7 +26,7 @@ class CrystaxNdk < Formula
 
     # Create a dummy script to launch the ndk apps
     ndk_exec = prefix+"ndk-exec.sh"
-    ndk_exec.write <<-EOS.undent
+    ndk_exec.write <<-EOS
       #!/bin/sh
       BASENAME=`basename $0`
       EXEC="#{prefix}/$BASENAME"
@@ -36,7 +36,7 @@ class CrystaxNdk < Formula
     %w[ndk-build ndk-gdb ndk-stack ndk-depends ndk-which].each { |app| bin.install_symlink ndk_exec => app }
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     We agreed to the CrystaX NDK License Agreement for you by downloading the NDK.
     If this is unacceptable you should uninstall.
 

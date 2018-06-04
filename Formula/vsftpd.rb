@@ -39,14 +39,14 @@ class Vsftpd < Formula
     s = ""
 
     if build.with? "openssl"
-      s += <<-EOS.undent
+      s += <<-EOS
         vsftpd was compiled with SSL support. To use it you must generate a SSL
         certificate and set 'enable_ssl=YES' in your config file.
 
       EOS
     end
 
-    s += <<-EOS.undent
+    s += <<-EOS
       To use chroot, vsftpd requires root privileges, so you will need to run
       `sudo vsftpd`.
       You should be certain that you trust any software you grant root privileges.
@@ -59,7 +59,7 @@ class Vsftpd < Formula
 
   plist_options :startup => true, :manual => "sudo vsftpd"
 
-  def plist; <<-EOS.undent
+  def plist; <<-EOS
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
     <plist version="1.0">
@@ -90,7 +90,7 @@ index 9dc8a5e..66dbe30 100644
 +++ b/sysdeputil.c
 @@ -64,6 +64,10 @@
  #include <utmpx.h>
- 
+
  /* BEGIN config */
 +#if defined(__APPLE__)
 +  #undef VSF_SYSDEP_HAVE_UTMPX

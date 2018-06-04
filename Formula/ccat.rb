@@ -22,7 +22,7 @@ class Ccat < Formula
   end
 
   test do
-    (testpath/"test.txt").write <<-EOS.undent
+    (testpath/"test.txt").write <<-EOS
       I am a colourful cat
     EOS
 

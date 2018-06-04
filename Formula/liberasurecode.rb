@@ -29,7 +29,7 @@ class Liberasurecode < Formula
   end
 
   test do
-    (testpath/"liberasurecode-test.cpp").write <<-EOS.undent
+    (testpath/"liberasurecode-test.cpp").write <<-EOS
       #include <erasurecode.h>
 
       int main() {

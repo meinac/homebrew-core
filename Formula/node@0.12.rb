@@ -111,7 +111,7 @@ class NodeAT012 < Formula
     s = ""
 
     if build.without? "npm"
-      s += <<-EOS.undent
+      s += <<-EOS
         Homebrew has NOT installed npm. If you later install it, you should supplement
         your NODE_PATH with the npm module folder:
           #{HOMEBREW_PREFIX}/lib/node_modules
@@ -119,7 +119,7 @@ class NodeAT012 < Formula
     end
 
     if build.with? "icu4c"
-      s += <<-EOS.undent
+      s += <<-EOS
 
         Please note `icu4c` is built with a newer deployment target than Node and
         this may cause issues in certain usage. Node itself is built against the

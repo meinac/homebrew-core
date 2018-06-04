@@ -22,7 +22,7 @@ class Mstch < Formula
     (lib/"pkgconfig/mstch.pc").write pc_file
   end
 
-  def pc_file; <<-EOS.undent
+  def pc_file; <<-EOS
     prefix=#{HOMEBREW_PREFIX}
     exec_prefix=${prefix}
     libdir=${exec_prefix}/lib
@@ -37,7 +37,7 @@ class Mstch < Formula
   end
 
   test do
-    (testpath/"test.cpp").write <<-EOS.undent
+    (testpath/"test.cpp").write <<-EOS
       #include <mstch/mstch.hpp>
       #include <cassert>
       #include <string>

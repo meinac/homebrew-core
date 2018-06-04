@@ -28,7 +28,7 @@ class Mvtools < Formula
   end
 
   def caveats
-    <<-EOS.undent
+    <<-EOS
       MVTools will not be autoloaded in your VapourSynth scripts. To use it
       use the following code in your scripts:
 

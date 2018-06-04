@@ -57,7 +57,7 @@ class Dmd < Formula
     conf = buildpath/"dmd.conf"
     # Can't use opt_include or opt_lib here because dmd won't have been
     # linked into opt by the time this build runs:
-    conf.write <<-EOS.undent
+    conf.write <<-EOS
         [Environment]
         DFLAGS=-I#{include}/dlang/dmd -L-L#{lib}
         EOS

@@ -48,7 +48,7 @@ EOS
     system "./mininush", "tools/nuke", "install"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     Nu.framework was installed to:
       #{frameworks}/Nu.framework
 

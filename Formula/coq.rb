@@ -3,7 +3,7 @@ class Camlp5TransitionalModeRequirement < Requirement
 
   satisfy(:build_env => false) { !Tab.for_name("camlp5").with?("strict") }
 
-  def message; <<-EOS.undent
+  def message; <<-EOS
     camlp5 must be compiled in transitional mode (instead of --strict mode):
       brew install camlp5
     EOS
@@ -49,7 +49,7 @@ class Coq < Formula
   end
 
   test do
-    (testpath/"testing.v").write <<-EOS.undent
+    (testpath/"testing.v").write <<-EOS
       Inductive nat : Set :=
       | O : nat
       | S : nat -> nat.

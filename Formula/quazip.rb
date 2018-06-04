@@ -20,7 +20,7 @@ class Quazip < Formula
   end
 
   test do
-    (testpath/"test.pro").write <<-EOS.undent
+    (testpath/"test.pro").write <<-EOS
       TEMPLATE     = app
       CONFIG      += console
       CONFIG      -= app_bundle
@@ -31,7 +31,7 @@ class Quazip < Formula
       LIBS        += -lquazip
     EOS
 
-    (testpath/"test.cpp").write <<-EOS.undent
+    (testpath/"test.cpp").write <<-EOS
       #include <quazip/quazip.h>
       int main() {
         QuaZip zip;

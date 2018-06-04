@@ -71,7 +71,7 @@ class Mesos < Formula
     # work around distutils abusing CC instead of using CXX
     # https://issues.apache.org/jira/browse/MESOS-799
     # https://github.com/Homebrew/homebrew/pull/37087
-    native_patch = <<-EOS.undent
+    native_patch = <<-EOS
       import os
       os.environ["CC"] = os.environ["CXX"]
       os.environ["LDFLAGS"] = "@LIBS@"
@@ -88,7 +88,7 @@ class Mesos < Formula
     # skip build javadoc because Homebrew sandbox ENV.java_cache
     # would trigger maven-javadoc-plugin bug.
     # https://issues.apache.org/jira/browse/MESOS-3482
-    maven_javadoc_patch = <<-EOS.undent
+    maven_javadoc_patch = <<-EOS
       <properties>
         <maven.javadoc.skip>true</maven.javadoc.skip>
       </properties>

@@ -32,7 +32,7 @@ class Beecrypt < Formula
   end
 
   test do
-    (testpath/"test.c").write <<-EOS.undent
+    (testpath/"test.c").write <<-EOS
       #include "beecrypt/base64.h"
       #include "beecrypt/sha256.h"
       #include <stdio.h>
@@ -67,7 +67,7 @@ __END__
 @@ -56,7 +56,7 @@
  					if (c->size() != size())
  						return false;
- 
+
 -					return containsAll(*c);
 +					return this->containsAll(*c);
  				}

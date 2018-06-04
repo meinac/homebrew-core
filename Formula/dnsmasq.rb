@@ -48,7 +48,7 @@ class Dnsmasq < Formula
     prefix.install "dnsmasq.conf.example"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
     To configure dnsmasq, copy the example configuration to #{etc}/dnsmasq.conf
     and edit to taste.
 
@@ -58,7 +58,7 @@ class Dnsmasq < Formula
 
   plist_options :startup => true
 
-  def plist; <<-EOS.undent
+  def plist; <<-EOS
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
     <plist version="1.0">

@@ -11,7 +11,7 @@ class Crowdin < Formula
   def install
     bin.install "crowdin-cli.jar"
     crowdin = bin/"crowdin"
-    crowdin.write <<-EOS.undent
+    crowdin.write <<-EOS
       #!/bin/bash
       java -jar "#{bin}/crowdin-cli.jar" "$@"
     EOS

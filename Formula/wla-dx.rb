@@ -24,7 +24,7 @@ class WlaDx < Formula
   end
 
   test do
-    (testpath/"test-gb-asm.s").write <<-EOS.undent
+    (testpath/"test-gb-asm.s").write <<-EOS
      .MEMORYMAP
       DEFAULTSLOT 1.01
       SLOT 0.001 $0000 $2000

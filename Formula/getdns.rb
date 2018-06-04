@@ -35,7 +35,7 @@ class Getdns < Formula
   end
 
   test do
-    (testpath/"test.c").write <<-EOS.undent
+    (testpath/"test.c").write <<-EOS
       #include <getdns/getdns.h>
 
       int main(int argc, char *argv[]) {

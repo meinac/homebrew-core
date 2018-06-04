@@ -26,7 +26,7 @@ class Cdargs < Formula
     bash_completion.install_symlink "#{prefix}/contrib/cdargs-bash.sh"
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<-EOS
       Support files for bash, tcsh, and emacs have been installed to:
         #{prefix}/contrib
     EOS
@@ -42,7 +42,7 @@ index 8a197ef..f3da067 100644
 @@ -11,6 +11,12 @@
  CDARGS_SORT=0   # set to 1 if you want mark to sort the list
  CDARGS_NODUPS=1 # set to 1 if you want mark to delete dups
- 
+
 +# Support ZSH via its BASH completion emulation
 +if [ -n "$ZSH_VERSION" ]; then
 +	autoload bashcompinit
@@ -54,7 +54,7 @@ index 8a197ef..f3da067 100644
  # directory to be used in the various context   #
 @@ -166,7 +172,7 @@ function mark ()
      local tmpfile
- 
+
      # first clear any bookmarks with this same alias, if file exists
 -    if [[ "$CDARGS_NODUPS" && -e "$HOME/.cdargs" ]]; then
 +    if [ "$CDARGS_NODUPS" ] && [ -e "$HOME/.cdargs" ]; then

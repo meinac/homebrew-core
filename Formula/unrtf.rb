@@ -30,7 +30,7 @@ class Unrtf < Formula
       {\b hello} world
       }
     EOS
-    expected = <<-EOS.undent
+    expected = <<-EOS
       <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
       <html>
       <head>
